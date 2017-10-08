@@ -31,6 +31,7 @@ gulp.task('hello', ()=>{
 More realistic example:
 
 Load the files that you want to process with `gulp.src`, pipe them through a gulp plugin, and save the results to the path specified in `gulp.dest`.
+
 ```
 gulp.task('task-name', function(){
   return gulp.src('source-files')
