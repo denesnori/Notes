@@ -5,7 +5,7 @@ git fetch
 
 - Checkout the particular file from the downloaded changes
 ```
-git checkout origin/master  <path/to/file>
+git checkout origin/master  -- <path/to/file>
 ```
 
 ### git fetvh vs git pull
