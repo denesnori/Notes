@@ -23,3 +23,20 @@ function debouncer(func, wait, asap){
 
 debouncer((num)=>{console.log("hi",num)},500,false)(400)
 ```
+
+
+#### React implemention
+
+
+```
+export default class Demo  extends React.Component {
+
+  constructor(props){
+    let debounceTimer = false;
+    this.updateHeaderHeight = () => {
+      clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(this._updateHeaderHeight.bind(this), 400);
+      }
+    }
+}
+```
