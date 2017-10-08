@@ -40,10 +40,22 @@ gulp.task('task-name', function(){
   })
 ```
 
-### Compile Sass to CSS
+### Preprocessing -- converting Sass to CSS
 
 
+```
+npm install gulp-sass --save-dev
+```
 
+```
+var gulp = require('gulp');
+var sass = require('gulp-sass');
+gulp.task('sass', function(){
+  return gulp.src('source-files')
+    .pipe(sass())
+    .pipe(gulp.dest('destination'))
+  });
+```
 
 
 ## References
