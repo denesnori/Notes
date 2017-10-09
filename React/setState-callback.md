@@ -46,3 +46,6 @@ APICall(){
   // call the API based on the updated state
 }
 ```
+
+### References
+1. (React docs)[https://reactjs.org/docs/react-component.html#setstate]
