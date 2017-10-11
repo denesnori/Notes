@@ -18,3 +18,24 @@ arr.forEach((current)=>{
 ```
 
 return value: ```undefined```
+
+
+#### Array.prototype.find(callback[, thisArg])
+
+- Return the first item that matches the test condition inside the callback function.
+- if there is no match, return ```undefined```.
+
+```
+[1,2,3,4,5,6,7].find((item,index,array)=> item > 4) //=> 5
+
+```
+
+#### Array.prototype.findIndex(callback[, thisArg])
+
+- returns the *index* of the first item that matches the condition in the callback.
+- if there is no match, ```-1``` is returned.
+```
+[1,2,3,4,5,6,7].find((item,index,array) => {
+  return item > 4
+  }) // => 4
+```

@@ -18,6 +18,24 @@ git submodule update --remote
 2. .git/config
 - it is the file that git checks when executing most commands.
 
+#### Cloning a project with submodules
+
+1. Clone the main repo
+```
+git clone https://github.com/your-repo
+```
+
+2.  Your submodule is ```mySubmodule```. If you list the files in the folder (```ls -la```), ```mySubmodule``` is there, but it is empty.
+Run the following 2 commands:
+```
+git submodule init
+````
+ It initializes your local config file.
+
+ ```
+ git submodule update
+ ```
+ Fetch all the data from the submodule, and checkout the commit referred in your project.
 #### Update submodules
 
 ```
@@ -26,6 +44,12 @@ git pull '$@' &&
     git submodule sync --recursive &&
     git submodule update --init --recursive
 ```
+
+##### Remove git submodules
+//TODO unfinished
+
+
+
 ##### Explanation
 
 ```
