@@ -115,6 +115,30 @@ componentWillUpdate: function (nextProps, nextState){
 - perform DOM operations
 
 ## Props changes
+Any changes on the ```props``` object will also trigger the lifecycle, almost indentical to state changes.
+1. componentWillReceiveProps
+2. shouldComponentUpdate
+3. componentWillUpdate
+4. Redner
+5. componentDidUpdate
+
+1. componentWillReceiveProps
+- when the props have changes, and it is not the initial ```render```.
+- enables to update the ```state``` depending on the current and the next props, without triggering another rendering.
+- note: there is no such thing in the state update lifecycle. Since a state change should never trigger prop changes.
+
+```
+componentWillReceiveProps: function(nextProps){
+  this.setState({
+    // setting the state
+  })
+}
+```
+
+## Unmounting
+### componentWillUnmount
+- is called before a component is removed from the DOM.
+- good for cleanup operations. Eg. remove the eventlisteners that were defined in ```componentDidMount```.
 
 
 ### References
