@@ -1,0 +1,5 @@
+```
+git add -A // stages all
+git add . // stages new and modified without deleted
+git add -u // stages modified and deleted without new
+```
