@@ -35,7 +35,7 @@ return value: ```undefined```
 - returns the *index* of the first item that matches the condition in the callback.
 - if there is no match, ```-1``` is returned.
 ```
-[1,2,3,4,5,6,7].find((item,index,array) => {
+[1,2,3,4,5,6,7].findIndex((item,index,array) => {
   return item > 4
   }) // => 4
 ```

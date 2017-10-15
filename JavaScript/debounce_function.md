@@ -1,4 +1,6 @@
 ### Debounce function
+- limita the rate at which a function can fire.
+- eg.: resize event listener on the window. Calculates some dimensions and repositions elements. -> one execution is not expensive, but the function being repeatedly fired can slow  the app down --> debounce it. 
 
 ```
 function debouncer(func, wait, asap){
