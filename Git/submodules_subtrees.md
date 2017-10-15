@@ -64,7 +64,53 @@ git submodule update --init recursive
 ```
 The submodule update command will recurse into the registered submodules, update and  init them - if required - and any nested submodules within.
 
+#### Remove submodules
+1. Remove the relevant section of the ```.gitmodules``` file.
+2. stage  the changes
+3. delete the relevant section form the ```.git/config``` file
+4. run the command below
+```
+git rm --cached path-to-submodule
+```
+5. rm  
+```
+rm -rf .git/module/path-to-submodule
+```
+6. git commit -m 'remove submodule'
+7. delete the now untracked submodule files
+```
+rm -rf path-to-submodules
+```
+
+```
+git rm --cached path-to-file
+```
+- completely removes the file's contents from the index.
+- on commit the file will be removed from the HEAD.
+
+```
+git reset --<path-to-file>
+```
+- reset the file in the index to be the same as the HEAD commit. --> no changes will be committed to this file
+- it won't work if there is no version of the file in the HEAD commit.
+
 ## Subtree
 - it is a copy. It is for code and history reuse. --> the size of the main repo increases after adding a subtree.
 - If you push from the main repo to a remote, is pushes the subtree files.
 - after integration there is no connection to the other repo, you only need to access it if you want to update it.
+
+
+## other
+
+list everything in the index under that folder
+```
+git ls-files --stage project folder
+```
+
+```git submodule init``` => only considers submodules that are already in the index (staged for initialization).
+-> write a script that parses the submodules and run ```git submodule add <url> <path>```
+
+```
+git config -f path_to_a_config
+```
+use the given config file instead of the one in .git/config

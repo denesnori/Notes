@@ -28,3 +28,7 @@ bgImg.onload = function(){
 }
 bgImg.src = imageLocation;
 ```
+
+- does ```display:'none';``` prevent sthe img from loading?
+ -Depends: browser, img vs backgroundImg
+ - if it is a background image and has display: none it won't load.

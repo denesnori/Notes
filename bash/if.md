@@ -1,5 +1,14 @@
 ## if
 
+General
+```
+if [ conditions ]; then
+  statement1
+  statement2
+fi
+```
+
+
 ```
 #!/bin/bash
 if [-d $1]; then
