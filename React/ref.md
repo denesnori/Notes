@@ -66,5 +66,41 @@ You can't use ```ref```s on functional components since the don't have instances
 
 ### Exposing DOM refs to parent components
 
+- rare usecase
+- you want to access a child's  DOM node from a parent component.
+- not recommended, breaks encapsulation
+- cometimes useful for triggering focus or measuring the size or position of a child DOM node.
+
+- you can add the reference to the child component (won't work for functional components), but this way you get a component instance and not a DOM node.
+
+- suggestion:
+  - expose a special prop on the child
+  - it would be a function prop, attach it to the DOM node as a ```ref``` attribute.
+  - the parent cans pass the ```ref``` callback to the child this way
+
+```
+class Parent extends Rect.Component{
+  render ( ){
+    return (
+        <Child
+          inputRef = { item => this.input = item }
+        />
+      )
+  }
+}
+
+function Child(props){
+  return (
+    <div>
+      <input ref={props.inputRef} >
+    </div>
+    );
+}
+```
+Advantages:
+- works with functional components
+- you can pass it several layers down
+
+
 #### references
 - (reactjs- Refs and the DOM)[https://reactjs.org/docs/refs-and-the-dom.html]
