@@ -55,6 +55,25 @@ Step when the constructor function is invoked with new:
 3. the code inside the function is executed
 4. object is returned
 
+## Pseudo-classical pattern
+
+- arguments are passed into the constructor function to set the initial state
+- BUT, shared behaviour is added to the constructor's protoype object --> it is shared among Objects
+
+```
+function House(windows, bedroom){
+  this.windows = windows;
+  this.bedroom = bedroom;
+}
+
+Game.protoype.isBigEnough = function (num){
+  return this.bedroom >= num;
+}
+
+var myHouse = new House(5,2);
+myHouse.isBigEnough(2);
+```
+
 ## OLOO - ( Objects Linking to Other Objects )
 
  - dispense with the class based approach to object creation
