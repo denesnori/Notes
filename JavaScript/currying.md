@@ -14,5 +14,10 @@ var curry = function ( uncurried ){
 }
 ```
 
+## Currying vs partial application
+
+
+
 ### References:
 1. (SitePoint on currying)[https://www.sitepoint.com/currying-in-functional-javascript/]
+2. (Eric Elliott - Medium -- currying vs partial application)[https://medium.com/javascript-scene/curry-or-partial-application-8150044c78b8]
