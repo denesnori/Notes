@@ -1,5 +1,7 @@
 ## Promises
 Def: an object that might return a single value in the future
+
+
 - either a resolved value
 - or an error message why it is not resolved
 - accept callbacks to be performed on the result or the reason for rejection
@@ -33,6 +35,24 @@ promise.then(
 ```
 - a pending promise ->evolve -> rejected or fulfilled
 - a fulfilled or rejected promise is settled -> it can't transition to any other state anymore
+
+### Resolving a promise
+When a promise is resolved, any success function registered with the ```then``` method will be called with the Error as argument.
+
+```
+var promise = new Promise(fulfill,reject){
+  setTimeout(function(){
+    fulfill();
+    },300)
+};
+
+function onFulfill(){
+  console.log('FULLFILLED!')
+};
+
+promise.then(onFulfill, null);
+```
+
 
 ### Promise chaining
 ```
