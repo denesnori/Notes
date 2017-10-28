@@ -131,3 +131,77 @@ if __name__ == '__main__':
 Reference:
 
 - [stackoverflow](https://stackoverflow.com/questions/7075082/what-is-future-in-python-used-for-and-how-when-to-use-it-and-how-it-works)
+
+### __name__ == '__main__'
+
+- when the Python interpreter reads the source file, it executes all the code inside.
+- BUT! First it defines some special variables.
+
+1. The python interpreter runs our source file as the main program
+
+```
+python myExample.py
+```
+ Then it sets the ```__name__``` variable to have a value ```__main__```.
+
+2. Our file is imported inside another file, module
+
+```__name__``` is set to the module's name.
+
+Simple example:
+
+```
+# a.py
+import b
+```
+
+```
+# b.py
+print "Called from %s" % __name__
+if __name__ == '__main__':
+  print "Called again from from %s" % __name__
+```
+
+```
+$ python a.py
+Called from b
+```
+
+```
+$ python b.py
+Called from __main__
+Called again from __main__
+# globals()['__name__'] is set to '__main__' this time
+```
+
+
+Reference:
+- [stackoverflow](https://stackoverflow.com/questions/419163/what-does-if-name-main-do)
+
+### ```__future__ import print_function```
+
+Brings the ```print``` function from Python 3 into Python 2.6+.
+
+```
+print(x, sep=' ', end='')
+```
+```
+from __future__ import print_function
+
+def printNumbers(n):
+  for i in range(1, n+1):
+    print(i, sep='',end='')
+
+if __name__ == '__main__':
+  n = int(raw_input())
+  printNumbers(n)
+```
+
+Reference:
+[stackoverflow](https://stackoverflow.com/questions/32032697/how-to-use-from-future-import-print-function)
+
+### for loops
+```
+for x in  range(0,3):
+  print "The next number is %d" % (x)
+```
