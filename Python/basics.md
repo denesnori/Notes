@@ -205,3 +205,28 @@ Reference:
 for x in  range(0,3):
   print "The next number is %d" % (x)
 ```
+
+
+### simple sort functions
+
+- ascending order
+
+```
+def compare(x,y):
+  if x < y:
+    return -1
+  elif x > y:
+    return 1
+  else:
+    return 0
+```
+- descending order
+```
+def compare(x,y):
+  if x > y:
+    return -1
+  elif x < y:
+    return 1
+  else:
+    return 0
+```
