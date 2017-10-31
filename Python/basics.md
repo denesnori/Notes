@@ -201,11 +201,28 @@ Reference:
 [stackoverflow](https://stackoverflow.com/questions/32032697/how-to-use-from-future-import-print-function)
 
 ### for loops
+**```range(start,end,step)```**
+
 ```
 for x in  range(0,3):
   print "The next number is %d" % (x)
 ```
 
+```
+for x in range(3):
+  print x
+```
+```
+for x in range(3,0,-1):
+  print x
+```
+
+```
+for x in [1,2,3]:
+  print x
+```
+
+[](https://wiki.python.org/moin/ForLoop)
 
 ### simple sort functions
 
