@@ -25,7 +25,7 @@ Reference
 - ```hash()``` is part of the ```__builtins__``` module -> no need to import it
 - return the hash value of an object, if it is defined
 - has values are integers
-- common usecase: make lookups quick in dicitionaries
+- common usecase: make lookups quick in dictionaries
 
 Reference
 - [hash](https://docs.python.org/3/library/functions.html#hash)
