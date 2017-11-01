@@ -26,3 +26,18 @@ second = now.second
 
 print '%s %s %s' % (now.year, now.month, now.day)
 ```
+
+### calendar module
+- calendar and additional methods
+
+Generarate plain text calendars:
+```
+class calendar.TextCalendar([firstweekday])
+```
+
+```
+import calendar
+print calendar.TextCalendar(firstweekday = 6).formatyear(2018)
+```
+Reference:
+-[](https://docs.python.org/2/library/calendar.html#calendar.setfirstweekday)
