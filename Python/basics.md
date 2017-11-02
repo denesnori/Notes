@@ -52,6 +52,26 @@ print "Hello %s %s" % (firstName, lastName)
 total = 33.333333
  print "%.2f" % total
 ```
+### ```*args```
+
+```*args``` allows you to pass in an arbitrary number of arguments.
+
+```
+a =[1, 3, 5, 7, 9]
+b =[2, 4, 6, 8, 10]
+
+def argstest(*args):
+    for i in args[2:]:
+      for j in i:
+        if j > 5:
+          print j
+
+argstest(5, 8, a, b)
+```
+
+Reference:
+-[](https://stackoverflow.com/questions/19916188/python-convert-args-to-list)
+-[](https://stackoverflow.com/questions/2921847/what-does-the-star-operator-mean)
 
 ## Control flow
 
@@ -223,6 +243,16 @@ for x in [1,2,3]:
 ```
 
 [](https://wiki.python.org/moin/ForLoop)
+
+### while loops
+
+```
+count = 5
+while count > 0:
+  print count
+  count -= 1
+```
+
 
 ### simple sort functions
 
