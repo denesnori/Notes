@@ -17,6 +17,31 @@ print ('\n').join([name for name,mark in grades if mark == secondLowest ])
 map( function-to-apply, array)
 ```
 
+```
+map(f, iterable)
+```
+equivalent to
+```
+[f(x) for x in iterable]
+```
+
+```
+[(a,b) for a in itA for b in itB]
+```
+
+```
+for a in itA:
+  for b in itB:
+    (a,b)
+```
+**I am not convinved that the formula below is correct.
+Check it**
+
+
+```
+map(lambda a:(map(lambda b: (a,b),itB)),itA)
+```
+
 Without map:
 ```
 arr = [1,2,3]
@@ -51,6 +76,9 @@ for i in range 5:
   ## [0, 0, 1] ...
 ```
 
+Reference:
+-[stackoverflow(https://stackoverflow.com/questions/10973766/understanding-the-map-function)
+
 **lambda**
 - single expression anonymous function
 - often inline function
@@ -65,16 +93,51 @@ sum = lambda x,y: x+y
 sum(1,2) #3
 ```
 
+```
+from fractions import Fraction
+from functools import reduce
+
+def product(fracs):
+    t = reduce(lambda x,y:  x*y, fracs)
+    return t.numerator, t.denominator
+
+if __name__ == '__main__':
+    fracs = []
+    for _ in range(int(input())):
+        fracs.append(Fraction(*map(int, input().split())))
+    result = product(fracs)
+    print(*result)
+```
 ## Filter
-
-
-## Reduce
+- takes a function returning True or False, and applies to an iterable. Returns the truthy values.
 
 ```
+l = [-5,-4,-3,-2,-1,0,1,2,3,4,5]
+print(filter(lambda x: x>0, l))
+```
+
+## Reduce ```reduce(lamdda_expression, iterable, inititial_value)```
+
+- applies a function of two arguments( accumulator, current value) on an iterable in succession
+- returns a single value
+- reduce has been moved to the ```functools``` module
+
+
+```
+from functools import reduce
 tuples = ((1,2),(3,4), (5,6))
 reduce( lambda acc,curr: acc+curr, tuples, ()) # (1,2,3,4,5,6)
 ```
+Reduce explainer:
+```
+reduce(lambda x,y: x*y, arr )
+```
 
+```
+accumulator = arr[0]
+for i in arr[1:]=
+  return accumulator *= i
+```
 Reference:
 - [](https://stackoverflow.com/questions/13603361/python-reduce-explanation)
 
