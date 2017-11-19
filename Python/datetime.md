@@ -26,6 +26,16 @@ second = now.second
 
 print '%s %s %s' % (now.year, now.month, now.day)
 ```
+#### ```datetime.strptime(string, formatter)```
+
+**strptime** -> **St**ring **P**arse **Time**
+
+Reference:
+-[strptime, stackoverflow](https://stackoverflow.com/questions/44596077/datetime-strptime-in-python)
+
+### ```datetime.strftime(...)```
+
+**strftime** -> **St**ring **F**ormat **Time**
 
 ### calendar module
 - calendar and additional methods
