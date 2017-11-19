@@ -69,6 +69,16 @@ def argstest(*args):
 argstest(5, 8, a, b)
 ```
 
+```
+arr = [0,1,2]
+print(*arr, sep=",")
+```
+is equivalent to
+
+```
+print(0,1,2, sep=',')
+```
+
 Reference:
 -[](https://stackoverflow.com/questions/19916188/python-convert-args-to-list)
 -[](https://stackoverflow.com/questions/2921847/what-does-the-star-operator-mean)
