@@ -83,7 +83,7 @@ Gives the first index of a match.
 
 ## ```string.isalnum()```
 - built-in method
-- checks whether the string contains only alphanumeric chaaracters (a-z, A-Z, 0-9)
+- checks whether the string contains only alphanumeric characters (a-z, A-Z, 0-9)
 
 ## ```str.isalpha()```
 - checks if all the characters are alphabetical (a-zA-Z)
@@ -115,6 +115,13 @@ s = input()
 for x in s[:].split():
     s = s.replace(x, x.capitalize())
 print(s)
+
+## str.strip(pattern)
+- removes leading or trailing characters that match any character from the given string.
+
+```
+".. ,,,:::Hello! ,,.,.,;,.,".strip(".:,; ") # Hello!
+```
 
 
 ### References
